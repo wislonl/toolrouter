@@ -55,11 +55,15 @@ Instead of maintaining separate JSON, TOML, YAML, and `.env` files for every CLI
 
 ## Screenshots
 
-> The screenshots below use demo provider data only. No real API keys are shown, and each image includes a GitHub QR marker.
+> The screenshots below use demo data only. Provider traffic and token totals are illustrative, and no real API keys are shown.
 
 |                        Provider Dashboard                        |                           Add Provider                           |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
 | ![ToolRouter provider dashboard](assets/screenshots/main-en.png) | ![ToolRouter add provider screen](assets/screenshots/add-en.png) |
+
+|                         Usage & Token Dashboard                          |
+| :----------------------------------------------------------------------: |
+| ![ToolRouter usage and token dashboard](assets/screenshots/usage-en.png) |
 
 ## ❤️Sponsor
 
