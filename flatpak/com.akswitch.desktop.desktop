@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=AK Switch
+Comment=All-in-One Assistant for Claude Code, Codex & Gemini CLI
+Exec=ak-switch
+Icon=com.akswitch.desktop
+Terminal=false
+Categories=Utility;Development;
+StartupNotify=true
