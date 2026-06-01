@@ -13,6 +13,38 @@ English | [中文](README_ZH.md) | [日本語](README_JA.md) | [Deutsch](README_
 
 </div>
 
+## What is ToolRouter?
+
+ToolRouter is a desktop control center for AI coding tools. It keeps provider endpoints, API keys, MCP servers, prompts, skills, proxy settings, and VS Code plugin integrations in one local app, then writes the right config to each tool when you switch.
+
+Instead of maintaining separate JSON, TOML, YAML, and `.env` files for every CLI, you can add a provider once, switch it from the main window or tray menu, and keep your local configs backed up with atomic writes.
+
+### At a glance
+
+| Area                | What ToolRouter manages                                                          |
+| ------------------- | -------------------------------------------------------------------------------- |
+| AI coding tools     | Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes Agent                 |
+| Editor integrations | Claude, Codex, Kilo, and OpenCode VS Code plugin config sync                     |
+| Provider routing    | 50+ presets, custom endpoints, official login profiles, local proxy and failover |
+| Shared assets       | MCP servers, prompts, skills, model catalogs, session history                    |
+| Data safety         | Local SQLite database, config backups, atomic writes, optional cloud/WebDAV sync |
+
+### Why teams use it
+
+- **Switch providers without config drift** — keep each tool's live config aligned from one source of truth.
+- **Reduce setup time** — import preset providers, MCP servers, prompts, and skills without hand-editing files.
+- **Keep editor plugins in sync** — manage VS Code plugin state alongside CLI tools.
+- **Protect local configs** — write changes atomically and keep backups before touching tool config files.
+- **Work across platforms** — native Windows, macOS, and Linux app built with Tauri 2.
+
+## Screenshots
+
+> The screenshots below use demo provider data only. No real API keys are shown, and each image includes a GitHub QR marker.
+
+|                        Provider Dashboard                        |                           Add Provider                           |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: |
+| ![ToolRouter provider dashboard](assets/screenshots/main-en.png) | ![ToolRouter add provider screen](assets/screenshots/add-en.png) |
+
 ## ❤️Sponsor
 
 > [Want to appear here?](mailto:farion1231@gmail.com)
@@ -145,27 +177,6 @@ Register now via <a href="https://pateway.ai/?ch=etzpm8&aff=WB6M6F67#/">this lin
 </table>
 
 </details>
-
-## Why ToolRouter?
-
-Modern AI-powered coding relies on CLI tools like Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, and Hermes — plus editor plugins that need their own config paths. Switching API providers means manually editing JSON, TOML, YAML, or `.env` files, and there is no unified way to manage MCP, Skills, and VS Code plugin state across multiple tools.
-
-**ToolRouter** gives you a single desktop app to manage Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, and Hermes. Instead of editing config files by hand, you get a visual interface to import providers with one click, switch between them instantly, sync VS Code plugin integrations, and manage MCP and Skills — all backed by a reliable SQLite database with atomic writes that protect your configs from corruption.
-
-- **One App, Six Managed Tools** — Manage Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, and Hermes from a single interface
-- **No More Manual Editing** — 50+ provider presets including AWS Bedrock, NVIDIA NIM, and community relays; just pick and switch
-- **VS Code Plugin Integration** — Detect and sync the Claude, Codex, Kilo, and OpenCode VS Code plugins from the app settings
-- **Unified MCP & Skills Management** — One panel to manage MCP servers and Skills across supported apps with bidirectional sync
-- **System Tray Quick Switch** — Switch providers instantly from the tray menu, no need to open the full app
-- **Cloud Sync** — Sync provider data across devices via Dropbox, OneDrive, iCloud, or WebDAV servers
-- **Cross-Platform** — Native desktop app for Windows, macOS, and Linux, built with Tauri 2
-- **Built-in Utilities** — Includes various utilities for first-launch login confirmation, signature bypass, plugin extension sync, and more
-
-## Screenshots
-
-|                  Main Interface                   |                  Add Provider                  |
-| :-----------------------------------------------: | :--------------------------------------------: |
-| ![Main Interface](assets/screenshots/main-en.png) | ![Add Provider](assets/screenshots/add-en.png) |
 
 ## Features
 

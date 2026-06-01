@@ -13,6 +13,38 @@
 
 </div>
 
+## ToolRouter 是什么？
+
+ToolRouter 是一个面向 AI 编程工具的桌面控制台。它把供应商端点、API Key、MCP 服务器、提示词、Skills、代理设置和 VS Code 插件集成集中到一个本地应用里，再在你切换时写入对应工具的配置文件。
+
+你不需要分别维护每个 CLI 的 JSON、TOML、YAML 或 `.env` 文件。添加一次供应商后，就可以从主窗口或系统托盘切换，并通过原子写入和自动备份保护本地配置。
+
+### 一眼看懂
+
+| 范围        | ToolRouter 管理什么                                              |
+| ----------- | ---------------------------------------------------------------- |
+| AI 编程工具 | Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent |
+| 编辑器集成  | Claude、Codex、Kilo、OpenCode 的 VS Code 插件配置同步            |
+| 供应商路由  | 50+ 预设、自定义端点、官方登录、本地代理与故障转移               |
+| 共享资产    | MCP 服务器、Prompts、Skills、模型目录、会话历史                  |
+| 数据安全    | 本地 SQLite 数据库、配置备份、原子写入、可选云盘/WebDAV 同步     |
+
+### 为什么需要它
+
+- **切换供应商不再配置漂移**：用一个事实源同步各工具的 live config。
+- **减少初始化成本**：预设供应商、MCP、Prompts、Skills 都能导入，不用手改文件。
+- **同步编辑器插件**：把 VS Code 插件配置和 CLI 工具一起管理。
+- **保护本地配置**：写入前备份，写入时使用原子操作，降低损坏风险。
+- **跨平台使用**：基于 Tauri 2 的 Windows、macOS、Linux 原生桌面应用。
+
+## 界面预览
+
+> 下方截图只使用演示供应商数据，不展示真实 API Key；每张图都带有 GitHub 二维码标记。
+
+|                        供应商控制台                        |                       添加供应商                        |
+| :--------------------------------------------------------: | :-----------------------------------------------------: |
+| ![ToolRouter 供应商控制台](assets/screenshots/main-zh.png) | ![ToolRouter 添加供应商](assets/screenshots/add-zh.png) |
+
 ## ❤️赞助商
 
 > [想出现在这里？](mailto:farion1231@gmail.com)
@@ -145,27 +177,6 @@ Claude Code / Codex / Gemini 官方渠道低至 3.8 / 0.2 / 0.9 折，充值更�
 </table>
 
 </details>
-
-## 为什么选择 ToolRouter？
-
-现代 AI 编程依赖于 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 和 Hermes 等 CLI/Agent 工具，也依赖 VS Code 里的多个插件，但每个工具都有自己的配置格式。切换 API 供应商意味着手动编辑 JSON、TOML、YAML 或 `.env` 文件，而在多个工具之间缺乏一个统一管理 MCP、Skills 和 VS Code 插件状态的方式。
-
-**ToolRouter** 为你提供一个桌面应用来管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 和 Hermes。无需手动编辑配置文件，你将获得一个可视化界面，一键将供应商导入应用，一键在不同的供应商之间进行切换，同步 VS Code 插件集成，并管理 MCP 与 Skills——所有操作都基于可靠的 SQLite 数据库和原子写入机制，保护你的配置不被损坏。
-
-- **一个应用，六个受管工具** — 在单一界面中管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 和 Hermes
-- **告别手动编辑** — 50+ 供应商预设，包括 AWS Bedrock、NVIDIA NIM 和社区中转服务；一键即可切换
-- **VS Code 插件集成** — 在设置中检测并同步 VS Code 的 Claude、Codex、Kilo 和 OpenCode 插件集成
-- **统一 MCP, SKILLS 管理** — 一个面板管理受支持应用的 MCP 与 Skills，支持双向同步
-- **系统托盘快速切换** — 从托盘菜单即时切换供应商，无需打开完整应用
-- **云同步** — 通过 Dropbox、OneDrive、iCloud 或 WebDAV 服务器在不同设备之间同步供应商数据
-- **跨平台** — 基于 Tauri 2 构建的原生桌面应用，支持 Windows、macOS 和 Linux
-- **小工具** - 内置了多种小工具来解决首次安装登录确认、禁止签名、插件拓展同步等多种功能
-
-## 界面预览
-
-|                  主界面                   |                  添加供应商                  |
-| :---------------------------------------: | :------------------------------------------: |
-| ![主界面](assets/screenshots/main-zh.png) | ![添加供应商](assets/screenshots/add-zh.png) |
 
 ## 功能特性
 
