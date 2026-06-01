@@ -30,9 +30,10 @@ describe("ToolRouter release branding", () => {
     const englishReadme = readFileSync("README.md", "utf8");
     const chineseReadme = readFileSync("README_ZH.md", "utf8");
 
-    expect(englishReadme).toContain("## Why ToolRouter?");
+    expect(englishReadme).toContain("## Positioning / 定位");
+    expect(englishReadme).toContain("## What is ToolRouter?");
     expect(englishReadme).toContain(
-      "**ToolRouter** gives you a single desktop app",
+      "ToolRouter is a desktop control center for AI coding tools.",
     );
     expect(englishReadme).toContain(
       "Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, and Hermes",
@@ -43,8 +44,11 @@ describe("ToolRouter release branding", () => {
     expect(englishReadme).toContain("**Deep Link** (`akswitch://`)");
     expect(englishReadme).toContain("`~/.ak-switch/ak-switch.db`");
 
-    expect(chineseReadme).toContain("## 为什么选择 ToolRouter？");
-    expect(chineseReadme).toContain("**ToolRouter** 为你提供一个桌面应用");
+    expect(chineseReadme).toContain("## 定位 / Positioning");
+    expect(chineseReadme).toContain("## ToolRouter 是什么？");
+    expect(chineseReadme).toContain(
+      "ToolRouter 是一个面向 AI 编程工具的桌面控制台。",
+    );
     expect(chineseReadme).toContain(
       "Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw 和 Hermes",
     );
@@ -109,11 +113,11 @@ describe("ToolRouter release branding", () => {
     const chineseReadme = readFileSync("README_ZH.md", "utf8");
     const funding = readFileSync(".github/FUNDING.yml", "utf8");
 
-    expect(englishReadme).toContain("repos=wislonl/ak-switch&type=Date");
-    expect(englishReadme).toContain("#wislonl/ak-switch&Date");
-    expect(chineseReadme).toContain("repos=wislonl/ak-switch&type=Date");
-    expect(chineseReadme).toContain("#wislonl/ak-switch&Date");
-    expect(funding).toContain("github.com/wislonl/ak-switch");
+    expect(englishReadme).toContain("repos=wislonl/toolrouter&type=Date");
+    expect(englishReadme).toContain("#wislonl/toolrouter&Date");
+    expect(chineseReadme).toContain("repos=wislonl/toolrouter&type=Date");
+    expect(chineseReadme).toContain("#wislonl/toolrouter&Date");
+    expect(funding).toContain("github.com/wislonl/toolrouter");
 
     expect(englishReadme).not.toContain("repos=farion1231/cc-switch&type=Date");
     expect(chineseReadme).not.toContain("repos=farion1231/cc-switch&type=Date");

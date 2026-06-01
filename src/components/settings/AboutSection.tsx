@@ -377,13 +377,13 @@ export function AboutSection({ isPortable }: AboutSectionProps) {
 
       if (!displayVersion) {
         await settingsApi.openExternal(
-          "https://github.com/wislonl/ak-switch/releases",
+          "https://github.com/wislonl/toolrouter/releases",
         );
         return;
       }
 
       await settingsApi.openExternal(
-        `https://github.com/wislonl/ak-switch/releases/tag/${displayVersion}`,
+        `https://github.com/wislonl/toolrouter/releases/tag/${displayVersion}`,
       );
     } catch (error) {
       console.error("[AboutSection] Failed to open release notes", error);
@@ -801,7 +801,9 @@ export function AboutSection({ isPortable }: AboutSectionProps) {
               variant="outline"
               size="sm"
               onClick={() =>
-                settingsApi.openExternal("https://github.com/wislonl/ak-switch")
+                settingsApi.openExternal(
+                  "https://github.com/wislonl/toolrouter",
+                )
               }
               className="h-8 gap-1.5 text-xs"
             >
@@ -813,7 +815,9 @@ export function AboutSection({ isPortable }: AboutSectionProps) {
               variant="outline"
               size="sm"
               onClick={() =>
-                settingsApi.openExternal("https://github.com/wislonl/ak-switch")
+                settingsApi.openExternal(
+                  "https://github.com/wislonl/toolrouter",
+                )
               }
               className="h-8 gap-1.5 text-xs"
             >

@@ -290,6 +290,8 @@ ToolRouter macOS 版本发布前应完成 Apple 代码签名和公证。正式�
 - **SKILLS**：`~/.ak-switch/skills/`（默认通过软链接连接到对应应用）
 - **技能备份**：`~/.ak-switch/skill-backups/`（卸载前自动创建，保留最近 20 个）
 
+> ToolRouter 会继续保留旧版 `~/.ak-switch` 数据目录和 `akswitch://` 深链，用于兼容已经安装过的用户数据与链接。
+
 </details>
 
 ## 文档
@@ -557,7 +559,7 @@ pnpm test:unit --coverage
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=wislonl/ak-switch&type=Date)](https://www.star-history.com/#wislonl/ak-switch&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=wislonl/toolrouter&type=Date)](https://www.star-history.com/#wislonl/toolrouter&Date)
 
 ## License
 

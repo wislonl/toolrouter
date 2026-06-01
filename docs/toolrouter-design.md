@@ -1,10 +1,10 @@
-# ak-switch Design
+# ToolRouter Design
 
 Date: 2026-05-31
 
 ## Goal
 
-Build `ak-switch` as a 1:1 copy of CC Switch with additional first-class support for:
+Build ToolRouter as a 1:1 copy of CC Switch with additional first-class support for:
 
 - Claude Code
 - Codex
@@ -50,7 +50,7 @@ No Kilo or OpenCode VS Code extension was found locally during this pass.
 
 ## Product Shape
 
-`ak-switch` should keep the upstream layout and behavior as much as possible:
+ToolRouter should keep the upstream layout and behavior as much as possible:
 
 - Same provider model.
 - Same switching workflow.
@@ -93,7 +93,7 @@ Fields:
 Sync behavior:
 
 - For a third-party Claude provider, write environment variables such as base URL and auth token into the VS Code setting array.
-- For official Claude login, remove only fields previously managed by `ak-switch`.
+- For official Claude login, remove only fields previously managed by ToolRouter.
 - Preserve unrelated user settings.
 - Never log or document actual token values.
 
@@ -186,10 +186,10 @@ Do not create a separate app ID named `vscode` until a real provider model is ne
 
 Initial rename scope:
 
-- `cc-switch` package name to `ak-switch`
+- `cc-switch` package name to `tool-router`
 - Product name `CC Switch` to `ToolRouter`
 - Identifier `com.ccswitch.desktop` to `com.toolrouter.desktop`
-- Deep link scheme `ccswitch` to `akswitch`
+- Deep link scheme `ccswitch` to `akswitch` for compatibility with existing links
 
 Keep original license and add an attribution section:
 
@@ -229,7 +229,7 @@ Manual verification still required:
 
 1. Copy upstream `v3.16.0` into this repository.
 2. Preserve `LICENSE` and add attribution.
-3. Rename package/product/identifier/deep-link/update metadata to `ak-switch`.
+3. Rename package/product/identifier/update metadata to ToolRouter while preserving compatible runtime identifiers where needed.
 4. Run baseline install/typecheck/tests.
 5. Add backend VS Code plugin adapter tests first.
 6. Implement backend adapters.

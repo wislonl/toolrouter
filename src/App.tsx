@@ -1144,7 +1144,7 @@ function App() {
               <div className="flex items-center gap-2">
                 <div className="relative inline-flex items-center">
                   <a
-                    href="https://github.com/wislonl/ak-switch"
+                    href="https://github.com/wislonl/toolrouter"
                     target="_blank"
                     rel="noreferrer"
                     className={cn(

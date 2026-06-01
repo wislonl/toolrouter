@@ -288,6 +288,8 @@ Add an official provider from the preset list. After switching to it, run the Lo
 - **Skills**: `~/.ak-switch/skills/` (symlinked to corresponding apps by default)
 - **Skill Backups**: `~/.ak-switch/skill-backups/` (created automatically before uninstall, keeps 20 most recent)
 
+> ToolRouter keeps the legacy `~/.ak-switch` data directory and `akswitch://` deep link for compatibility with existing installations.
+
 </details>
 
 ## Documentation
@@ -555,7 +557,7 @@ For new features, please open an issue for discussion before submitting a PR. PR
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=wislonl/ak-switch&type=Date)](https://www.star-history.com/#wislonl/ak-switch&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=wislonl/toolrouter&type=Date)](https://www.star-history.com/#wislonl/toolrouter&Date)
 
 ## License
 
