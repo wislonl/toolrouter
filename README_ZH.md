@@ -13,6 +13,12 @@
 
 </div>
 
+## 定位 / Positioning
+
+**中文：** ToolRouter 基于 CC Switch，但定位不再只是 API Key 切换器，而是面向现代 AI 编程工具链的本地路由控制台：统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent、VS Code 插件、MCP、Prompts 和 Skills。
+
+**EN:** ToolRouter is a broader, Codex-friendly fork of CC Switch. It keeps the original provider-switching workflow, then extends it into a local routing console for modern AI coding tools: Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes Agent, VS Code plugins, MCP, prompts, and skills.
+
 ## ToolRouter 是什么？
 
 ToolRouter 是一个面向 AI 编程工具的桌面控制台。它把供应商端点、API Key、MCP 服务器、提示词、Skills、代理设置和 VS Code 插件集成集中到一个本地应用里，再在你切换时写入对应工具的配置文件。
@@ -36,6 +42,16 @@ ToolRouter 是一个面向 AI 编程工具的桌面控制台。它把供应商�
 - **同步编辑器插件**：把 VS Code 插件配置和 CLI 工具一起管理。
 - **保护本地配置**：写入前备份，写入时使用原子操作，降低损坏风险。
 - **跨平台使用**：基于 Tauri 2 的 Windows、macOS、Linux 原生桌面应用。
+
+### 相比 CC Switch / Compared with CC Switch
+
+| 中文                                                   | EN                                                         |
+| ------------------------------------------------------ | ---------------------------------------------------------- |
+| 覆盖范围更宽，不只面向 Claude/Gemini 切换              | Broader tool coverage beyond Claude/Gemini switching       |
+| 更适合 Codex / OpenAI 编程工作流                       | First-class Codex and OpenAI coding workflow positioning   |
+| 支持 Claude、Codex、Kilo、OpenCode 的 VS Code 插件同步 | VS Code plugin sync for Claude, Codex, Kilo, and OpenCode  |
+| 统一管理 MCP、Prompts、Skills、代理和供应商路由        | Unified MCP, prompts, skills, proxy, and provider routing  |
+| 本地优先，使用 SQLite、备份和原子写入保护配置          | Local-first safety with SQLite, backups, and atomic writes |
 
 ## 界面预览
 

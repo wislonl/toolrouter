@@ -13,6 +13,12 @@ English | [中文](README_ZH.md) | [日本語](README_JA.md) | [Deutsch](README_
 
 </div>
 
+## Positioning / 定位
+
+**EN:** ToolRouter is a broader, Codex-friendly fork of CC Switch. It keeps the original provider-switching workflow, then extends it into a local routing console for modern AI coding tools: Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes Agent, VS Code plugins, MCP, prompts, and skills.
+
+**中文：** ToolRouter 基于 CC Switch，但定位不再只是 API Key 切换器，而是面向现代 AI 编程工具链的本地路由控制台：统一管理 Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent、VS Code 插件、MCP、Prompts 和 Skills。
+
 ## What is ToolRouter?
 
 ToolRouter is a desktop control center for AI coding tools. It keeps provider endpoints, API keys, MCP servers, prompts, skills, proxy settings, and VS Code plugin integrations in one local app, then writes the right config to each tool when you switch.
@@ -36,6 +42,16 @@ Instead of maintaining separate JSON, TOML, YAML, and `.env` files for every CLI
 - **Keep editor plugins in sync** — manage VS Code plugin state alongside CLI tools.
 - **Protect local configs** — write changes atomically and keep backups before touching tool config files.
 - **Work across platforms** — native Windows, macOS, and Linux app built with Tauri 2.
+
+### Compared with CC Switch / 相比 CC Switch
+
+| EN                                                         | 中文                                                   |
+| ---------------------------------------------------------- | ------------------------------------------------------ |
+| Broader tool coverage beyond Claude/Gemini switching       | 覆盖范围更宽，不只面向 Claude/Gemini 切换              |
+| First-class Codex and OpenAI coding workflow positioning   | 更适合 Codex / OpenAI 编程工作流                       |
+| VS Code plugin sync for Claude, Codex, Kilo, and OpenCode  | 支持 Claude、Codex、Kilo、OpenCode 的 VS Code 插件同步 |
+| Unified MCP, prompts, skills, proxy, and provider routing  | 统一管理 MCP、Prompts、Skills、代理和供应商路由        |
+| Local-first safety with SQLite, backups, and atomic writes | 本地优先，使用 SQLite、备份和原子写入保护配置          |
 
 ## Screenshots
 
