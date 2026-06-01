@@ -521,10 +521,10 @@ fn read_status(target_id: &str) -> Result<VscodePluginStatus, String> {
     let message = match target.id {
         "codex" if installed => Some("Codex VS Code 插件复用 ~/.codex 配置与认证文件".to_string()),
         "opencode" if installed => Some(
-            "OpenCode VS Code 插件可同步 AK Switch 管理的 provider 到 opencode.json".to_string(),
+            "OpenCode VS Code 插件可同步 ToolRouter 管理的 provider 到 opencode.json".to_string(),
         ),
         "kilo" if installed => {
-            Some("Kilo VS Code 插件可同步 AK Switch 管理的 provider 到 kilo.jsonc".to_string())
+            Some("Kilo VS Code 插件可同步 ToolRouter 管理的 provider 到 kilo.jsonc".to_string())
         }
         _ => None,
     };
@@ -615,14 +615,14 @@ pub fn preview_vscode_plugin_changes(
     let paths = config_paths(&targetId)?;
     let summary = match targetId.as_str() {
         "claude" => {
-            "写入或清除 ~/.claude/config.json，并同步 VS Code settings.json 中 AK Switch 管理的 claudeCode 环境变量和登录提示设置".to_string()
+            "写入或清除 ~/.claude/config.json，并同步 VS Code settings.json 中 ToolRouter 管理的 claudeCode 环境变量和登录提示设置".to_string()
         }
         "codex" => "Codex 插件复用 ~/.codex 配置；当前无需额外写入".to_string(),
         "opencode" => {
-            "写入或清除 opencode.json 中 AK Switch 管理的 provider.ak-switch-current".to_string()
+            "写入或清除 opencode.json 中 ToolRouter 管理的 provider.ak-switch-current".to_string()
         }
         "kilo" => {
-            "写入或清除 kilo.jsonc 中 AK Switch 管理的 provider.ak-switch-current".to_string()
+            "写入或清除 kilo.jsonc 中 ToolRouter 管理的 provider.ak-switch-current".to_string()
         }
         _ => return Err(format!("未知的 VS Code 插件目标: {targetId}")),
     };
@@ -889,7 +889,7 @@ mod tests {
     },
     "ak-switch-current": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "AK Switch Current",
+      "name": "ToolRouter Current",
       "metadata": {
         "managedBy": "ak-switch"
       },
@@ -940,7 +940,7 @@ mod tests {
                 "provider": {
                     "ak-switch-current": {
                         "npm": "@ai-sdk/openai-compatible",
-                        "name": "AK Switch Current",
+                        "name": "ToolRouter Current",
                         "metadata": {
                             "managedBy": "ak-switch"
                         },

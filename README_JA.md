@@ -1,6 +1,6 @@
 <div align="center">
 
-# AK Switch
+# ToolRouter
 
 ### Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw、Hermes Agent、VS Code プラグインのオールインワン管理ツール
 
@@ -9,7 +9,7 @@
 
 [English](README.md) | [中文](README_ZH.md) | 日本語 | [Deutsch](README_DE.md) | [Changelog](CHANGELOG.md)
 
-> AK Switch は Jason Young / farion1231 による CC Switch をベースにした MIT ライセンスの派生です。[NOTICE.md](NOTICE.md) を参照してください。
+> ToolRouter は Jason Young / farion1231 による CC Switch をベースにした MIT ライセンスの派生です。[NOTICE.md](NOTICE.md) を参照してください。
 
 </div>
 
@@ -145,7 +145,7 @@ Claude Code / Codex / Gemini 公式チャンネルが最安で元価格の 38% /
 
 </details>
 
-## AK Switch を選ぶ理由
+## ToolRouter を選ぶ理由
 
 最新の AI コーディングは Claude Code、Codex、Gemini CLI、OpenCode、OpenClaw などの CLI ツールに依存していますが、各ツールの設定形式はバラバラです。API プロバイダを切り替えるたびに JSON、TOML、`.env` ファイルを手動で編集する必要があり、複数ツール間で MCP や Skills を統一的に管理する手段もありません。
 

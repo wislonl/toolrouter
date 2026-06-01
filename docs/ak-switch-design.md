@@ -126,7 +126,7 @@ Supported target:
 Sync behavior:
 
 - Manage only `provider.ak-switch-current` in Kilo's JSONC config.
-- Source the payload from the current AK Switch OpenCode provider and mark it with `metadata.managedBy: "ak-switch"`.
+- Source the payload from the current ToolRouter OpenCode provider and mark it with `metadata.managedBy: "ak-switch"`.
 - Create a timestamped backup before writing normalized JSONC.
 - Keep Kilo support optional when the extension is not installed locally.
 
@@ -187,13 +187,13 @@ Do not create a separate app ID named `vscode` until a real provider model is ne
 Initial rename scope:
 
 - `cc-switch` package name to `ak-switch`
-- Product name `CC Switch` to `AK Switch`
-- Identifier `com.ccswitch.desktop` to `com.akswitch.desktop`
+- Product name `CC Switch` to `ToolRouter`
+- Identifier `com.ccswitch.desktop` to `com.toolrouter.desktop`
 - Deep link scheme `ccswitch` to `akswitch`
 
 Keep original license and add an attribution section:
 
-> AK Switch is based on CC Switch by Jason Young, licensed under the MIT License.
+> ToolRouter is based on CC Switch by Jason Young, licensed under the MIT License.
 
 ## Testing Plan
 
@@ -202,8 +202,8 @@ Backend unit tests:
 - Claude adapter preserves unrelated VS Code settings.
 - Claude adapter removes only managed environment variables.
 - Codex adapter reports the installed extension and Codex config paths.
-- Kilo adapter can read/write/remove only AK Switch managed JSONC provider entries.
-- OpenCode adapter can read/write/remove only AK Switch managed provider entries and preserve unrelated config.
+- Kilo adapter can read/write/remove only ToolRouter managed JSONC provider entries.
+- OpenCode adapter can read/write/remove only ToolRouter managed provider entries and preserve unrelated config.
 
 Frontend unit tests:
 
@@ -244,4 +244,4 @@ Manual verification still required:
 - VS Code extensions may change private storage or CLI launching behavior. The first implementation should write only documented/user-facing config files.
 - Secrets must never be copied into docs, tests, logs, or memory.
 - Upstream updater metadata must not keep pointing to CC Switch releases after rebranding.
-- Kilo/OpenCode currently source from the AK Switch OpenCode provider. A later provider-source picker may be needed if users expect Kilo to sync from non-OpenCode app providers.
+- Kilo/OpenCode currently source from the ToolRouter OpenCode provider. A later provider-source picker may be needed if users expect Kilo to sync from non-OpenCode app providers.

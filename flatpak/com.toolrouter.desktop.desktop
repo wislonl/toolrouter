@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=AK Switch
+Name=ToolRouter
 Comment=All-in-One Assistant for Claude Code, Codex & Gemini CLI
-Exec=ak-switch
-Icon=com.akswitch.desktop
+Exec=tool-router
+Icon=com.toolrouter.desktop
 Terminal=false
 Categories=Utility;Development;
 StartupNotify=true

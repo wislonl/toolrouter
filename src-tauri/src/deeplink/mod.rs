@@ -1,4 +1,4 @@
-//! Deep link import functionality for AK Switch
+//! Deep link import functionality for ToolRouter
 //!
 //! This module implements the akswitch:// protocol for importing configurations
 //! via deep links. Supports importing:

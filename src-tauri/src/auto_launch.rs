@@ -2,7 +2,7 @@ use crate::error::AppError;
 use auto_launch::{AutoLaunch, AutoLaunchBuilder};
 
 /// 获取 macOS 上的 .app bundle 路径
-/// 将 `/path/to/AK Switch.app/Contents/MacOS/AK Switch` 转换为 `/path/to/AK Switch.app`
+/// 将 `/path/to/ToolRouter.app/Contents/MacOS/ToolRouter` 转换为 `/path/to/ToolRouter.app`
 #[cfg(target_os = "macos")]
 fn get_macos_app_bundle_path(exe_path: &std::path::Path) -> Option<std::path::PathBuf> {
     let path_str = exe_path.to_string_lossy();
@@ -17,7 +17,7 @@ fn get_macos_app_bundle_path(exe_path: &std::path::Path) -> Option<std::path::Pa
 
 /// 初始化 AutoLaunch 实例
 fn get_auto_launch() -> Result<AutoLaunch, AppError> {
-    let app_name = "AK Switch";
+    let app_name = "ToolRouter";
     let exe_path =
         std::env::current_exe().map_err(|e| AppError::Message(format!("无法获取应用路径: {e}")))?;
 
@@ -76,11 +76,12 @@ mod tests {
     #[cfg(target_os = "macos")]
     #[test]
     fn test_get_macos_app_bundle_path_valid() {
-        let exe_path = std::path::Path::new("/Applications/AK Switch.app/Contents/MacOS/AK Switch");
+        let exe_path =
+            std::path::Path::new("/Applications/ToolRouter.app/Contents/MacOS/ToolRouter");
         let result = get_macos_app_bundle_path(exe_path);
         assert_eq!(
             result,
-            Some(std::path::PathBuf::from("/Applications/AK Switch.app"))
+            Some(std::path::PathBuf::from("/Applications/ToolRouter.app"))
         );
     }
 
@@ -88,12 +89,12 @@ mod tests {
     #[test]
     fn test_get_macos_app_bundle_path_with_spaces() {
         let exe_path =
-            std::path::Path::new("/Users/test/My Apps/AK Switch.app/Contents/MacOS/AK Switch");
+            std::path::Path::new("/Users/test/My Apps/ToolRouter.app/Contents/MacOS/ToolRouter");
         let result = get_macos_app_bundle_path(exe_path);
         assert_eq!(
             result,
             Some(std::path::PathBuf::from(
-                "/Users/test/My Apps/AK Switch.app"
+                "/Users/test/My Apps/ToolRouter.app"
             ))
         );
     }

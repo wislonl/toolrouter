@@ -8,6 +8,7 @@ release/
 *.tsbuildinfo
 .npmrc
 CLAUDE.md
+handoff.md
 # AGENTS.md
 GEMINI.md
 /.claude
@@ -20,7 +21,8 @@ vitest-report.json
 nul
 
 # Flatpak build artifacts
-flatpak/cc-switch.deb
+flatpak/tool-router.deb
+flatpak/ak-switch.deb
 flatpak-build/
 flatpak-repo/
 .worktrees/

@@ -1,6 +1,6 @@
 <div align="center">
 
-# AK Switch
+# ToolRouter
 
 ### Der All-in-One-Manager für Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes Agent und VS Code Plugins
 
@@ -9,7 +9,7 @@
 
 [English](README.md) | [中文](README_ZH.md) | [日本語](README_JA.md) | Deutsch | [Changelog](CHANGELOG.md)
 
-> AK Switch basiert auf CC Switch von Jason Young / farion1231 und bleibt MIT-lizenziert. Siehe [NOTICE.md](NOTICE.md).
+> ToolRouter basiert auf CC Switch von Jason Young / farion1231 und bleibt MIT-lizenziert. Siehe [NOTICE.md](NOTICE.md).
 
 </div>
 
@@ -146,7 +146,7 @@ Registrieren Sie sich jetzt über <a href="https://pateway.ai/?ch=etzpm8&aff=WB6
 
 </details>
 
-## Warum AK Switch?
+## Warum ToolRouter?
 
 Modernes KI-gestütztes Programmieren stützt sich auf CLI-Werkzeuge wie Claude Code, Codex, Gemini CLI, OpenCode und OpenClaw — doch jedes hat sein eigenes Konfigurationsformat. Der Wechsel des API-Anbieters bedeutet, JSON-, TOML- oder `.env`-Dateien von Hand zu bearbeiten, und es gibt keine einheitliche Möglichkeit, MCP und Skills über mehrere Werkzeuge hinweg zu verwalten.
 
@@ -163,7 +163,7 @@ Modernes KI-gestütztes Programmieren stützt sich auf CLI-Werkzeuge wie Claude 
 ## Screenshots
 
 |                  Hauptoberfläche                   |                  Anbieter hinzufügen                  |
-| :-----------------------------------------------: | :--------------------------------------------: |
+| :------------------------------------------------: | :---------------------------------------------------: |
 | ![Hauptoberfläche](assets/screenshots/main-en.png) | ![Anbieter hinzufügen](assets/screenshots/add-en.png) |
 
 ## Funktionen

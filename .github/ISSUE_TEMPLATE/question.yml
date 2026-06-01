@@ -10,12 +10,12 @@ body:
       label: Self Checks / 自检
       options:
         - label: |
-            I have read the FAQ section in this AK Switch repository's README.
-            我已阅读本 AK Switch 仓库 README 中的常见问题。
+            I have read the FAQ section in this ToolRouter repository's README.
+            我已阅读本 ToolRouter 仓库 README 中的常见问题。
           required: true
         - label: |
-            I have searched for existing issues in this AK Switch repository, including closed ones.
-            我已搜索过本 AK Switch 仓库已有的 Issue，包括已关闭的。
+            I have searched for existing issues in this ToolRouter repository, including closed ones.
+            我已搜索过本 ToolRouter 仓库已有的 Issue，包括已关闭的。
           required: true
 
   - type: dropdown
@@ -59,8 +59,8 @@ body:
     attributes:
       label: Environment / 环境信息
       description: |
-        OS, AK Switch version, and any relevant details.
-        操作系统、AK Switch 版本及其他相关信息。
-      placeholder: "e.g. macOS 15.4, AK Switch 3.16.0"
+        OS, ToolRouter version, and any relevant details.
+        操作系统、ToolRouter 版本及其他相关信息。
+      placeholder: "e.g. macOS 15.4, ToolRouter 3.16.0"
     validations:
       required: false

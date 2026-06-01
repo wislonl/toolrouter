@@ -1,10 +1,10 @@
 //! OpenCode MCP 同步和导入模块
 //!
-//! 本模块处理 AK Switch 统一 MCP 格式与 OpenCode 格式之间的转换。
+//! 本模块处理 ToolRouter 统一 MCP 格式与 OpenCode 格式之间的转换。
 //!
 //! ## 格式差异
 //!
-//! | AK Switch 统一格式    | OpenCode 格式       |
+//! | ToolRouter 统一格式    | OpenCode 格式       |
 //! |----------------------|---------------------|
 //! | `type: "stdio"`      | `type: "local"`     |
 //! | `command` + `args`   | `command: [cmd, ...args]` |
@@ -32,10 +32,10 @@ fn should_sync_opencode_mcp() -> bool {
 }
 
 // ============================================================================
-// Format Conversion: AK Switch → OpenCode
+// Format Conversion: ToolRouter → OpenCode
 // ============================================================================
 
-/// Convert AK Switch unified format to OpenCode format
+/// Convert ToolRouter unified format to OpenCode format
 ///
 /// Conversion rules:
 /// - `stdio` → `local`, command+args → command array, env → environment
@@ -104,10 +104,10 @@ pub fn convert_to_opencode_format(spec: &Value) -> Result<Value, AppError> {
 }
 
 // ============================================================================
-// Format Conversion: OpenCode → AK Switch
+// Format Conversion: OpenCode → ToolRouter
 // ============================================================================
 
-/// Convert OpenCode format to AK Switch unified format
+/// Convert OpenCode format to ToolRouter unified format
 ///
 /// Conversion rules:
 /// - `local` → `stdio`, command array → command+args, environment → env

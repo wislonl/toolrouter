@@ -44,7 +44,7 @@ pub fn get_log_dir() -> PathBuf {
 }
 
 fn crash_log_saved_message(log_path: &std::path::Path) -> String {
-    format!("\n[AK Switch] Crash log saved to: {}", log_path.display())
+    format!("\n[ToolRouter] Crash log saved to: {}", log_path.display())
 }
 
 /// 安全获取环境信息（不会 panic）
@@ -210,7 +210,7 @@ mod tests {
     #[test]
     fn crash_log_message_uses_ak_switch_brand() {
         let message = crash_log_saved_message(std::path::Path::new("/tmp/crash.log"));
-        assert!(message.contains("[AK Switch]"));
+        assert!(message.contains("[ToolRouter]"));
         assert!(!message.contains("[CC-Switch]"));
     }
 }

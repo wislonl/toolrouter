@@ -1,6 +1,6 @@
-# AK Switch Attribution
+# ToolRouter Attribution
 
-AK Switch is based on CC Switch by Jason Young / farion1231.
+ToolRouter is based on CC Switch by Jason Young / farion1231.
 
 The upstream project is licensed under the MIT License. The original license is preserved in `LICENSE`.
 

@@ -4,7 +4,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "AK Switch",
+        "title": "ToolRouter",
         "titleBarStyle": "Visible",
         "visible": false,
         "minWidth": 900,

@@ -1,10 +1,10 @@
 //! Hermes MCP sync and import module
 //!
-//! Handles conversion between AK Switch unified MCP format and Hermes config.yaml format.
+//! Handles conversion between ToolRouter unified MCP format and Hermes config.yaml format.
 //!
 //! ## Format mapping
 //!
-//! | AK Switch unified (JSON)                        | Hermes config.yaml (YAML)       |
+//! | ToolRouter unified (JSON)                        | Hermes config.yaml (YAML)       |
 //! |-------------------------------------------------|---------------------------------|
 //! | `{"type":"stdio","command":"npx","args":[...],"env":{}}` | `command: npx`, `args: [...]`, `env: {}` |
 //! | `{"type":"sse"/"http","url":"...","headers":{}}` | `url: "..."`, `headers: {}`    |
@@ -27,7 +27,7 @@ use super::validation::validate_server_spec;
 /// Update this list when Hermes adds new per-server config fields.
 ///
 /// `auth` ("oauth" / absent) is an OAuth-type declaration read by Hermes —
-/// AK Switch has no OAuth UI, but losing the field on round-trip downgrades
+/// ToolRouter has no OAuth UI, but losing the field on round-trip downgrades
 /// the server to unauthenticated calls.
 const HERMES_EXTRA_FIELDS: &[&str] = &[
     "enabled",
@@ -49,10 +49,10 @@ fn should_sync_hermes_mcp() -> bool {
 }
 
 // ============================================================================
-// Format Conversion: AK Switch -> Hermes
+// Format Conversion: ToolRouter -> Hermes
 // ============================================================================
 
-/// Convert AK Switch unified format to Hermes format
+/// Convert ToolRouter unified format to Hermes format
 ///
 /// Conversion rules:
 /// - `stdio`: output `command`, `args`, `env` (strip `type` field)
@@ -105,10 +105,10 @@ fn convert_to_hermes_format(spec: &Value) -> Result<Value, AppError> {
 }
 
 // ============================================================================
-// Format Conversion: Hermes -> AK Switch
+// Format Conversion: Hermes -> ToolRouter
 // ============================================================================
 
-/// Convert Hermes format to AK Switch unified format
+/// Convert Hermes format to ToolRouter unified format
 ///
 /// Conversion rules:
 /// - If `command` exists: set `type: "stdio"`, extract `command`, `args`, `env`
@@ -205,7 +205,7 @@ pub fn sync_single_server_to_hermes(
 ///
 /// Core fields (command, args, env, url, headers) come from `new_spec`.
 /// Hermes-specific fields (enabled, tools, sampling, etc.) are kept from
-/// `existing` — this prevents AK Switch from overwriting user customizations.
+/// `existing` — this prevents ToolRouter from overwriting user customizations.
 fn merge_hermes_spec(existing: &Value, new_spec: &Value) -> Value {
     let mut result = serde_json::Map::new();
 
@@ -531,7 +531,7 @@ mod tests {
         assert_eq!(merged["headers"]["X-Trace"], "abc");
         assert_eq!(
             merged["auth"], "oauth",
-            "auth declaration must survive AK Switch round-trip"
+            "auth declaration must survive ToolRouter round-trip"
         );
     }
 
