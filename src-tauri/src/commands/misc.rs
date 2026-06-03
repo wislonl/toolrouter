@@ -1299,6 +1299,38 @@ fn extend_mise_node_search_paths(paths: &mut Vec<std::path::PathBuf>, home: &Pat
     }
 }
 
+#[cfg(target_os = "macos")]
+fn extend_macos_app_bundle_cli_search_paths(
+    paths: &mut Vec<std::path::PathBuf>,
+    tool: &str,
+    home: &Path,
+) {
+    let app_name = match tool {
+        // The OpenAI Codex macOS app ships a runnable CLI at
+        // `Contents/Resources/codex`, but it is not normally added to PATH.
+        "codex" => "Codex.app",
+        _ => return,
+    };
+
+    push_unique_path(
+        paths,
+        std::path::PathBuf::from("/Applications")
+            .join(app_name)
+            .join("Contents")
+            .join("Resources"),
+    );
+
+    if !home.as_os_str().is_empty() {
+        push_unique_path(
+            paths,
+            home.join("Applications")
+                .join(app_name)
+                .join("Contents")
+                .join("Resources"),
+        );
+    }
+}
+
 /// 构建某工具的候选搜索目录（原生安装优先，PATH 兜底）。
 /// 单探兜底 (`scan_cli_version`) 与全量枚举 (`enumerate_tool_installations`) 共用，
 /// 确保两条路径看到的是同一组安装位置。
@@ -1317,6 +1349,7 @@ fn build_tool_search_paths(tool: &str) -> Vec<std::path::PathBuf> {
 
     #[cfg(target_os = "macos")]
     {
+        extend_macos_app_bundle_cli_search_paths(&mut search_paths, tool, &home);
         push_unique_path(
             &mut search_paths,
             std::path::PathBuf::from("/opt/homebrew/bin"),
@@ -4509,6 +4542,23 @@ mod tests {
         let candidates = tool_executable_candidates("opencode", &dir);
 
         assert_eq!(candidates, vec![PathBuf::from("/usr/local/bin/opencode")]);
+    }
+
+    #[cfg(target_os = "macos")]
+    #[test]
+    fn codex_search_paths_include_macos_app_bundle_resources() {
+        let paths = build_tool_search_paths("codex");
+
+        assert!(paths.contains(&PathBuf::from("/Applications/Codex.app/Contents/Resources")));
+
+        let home = dirs::home_dir().expect("home dir should be available");
+        assert!(paths.contains(
+            &home
+                .join("Applications")
+                .join("Codex.app")
+                .join("Contents")
+                .join("Resources")
+        ));
     }
 
     #[cfg(target_os = "windows")]
